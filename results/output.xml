@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-08-02T10:52:40.768452" rpa="false" schemaversion="5">
+<suite id="s1" name="BDD" source="C:\Users\jaque\Documents\Projetos RobotFramework\Aprendendo RobotFramework\BDD.robot">
+<test id="s1-t1" name="Cenário 1: Executar vídeo no site do Youtybe" line="43">
+<kw name="Dado que eu acesso o site do Youtube">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-02T10:52:41.041112" level="INFO">Opening browser 'chrome' to base url 'https://www.youtube.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-02T10:52:41.041112" elapsed="7.372459"/>
+</kw>
+<status status="PASS" start="2024-08-02T10:52:41.041112" elapsed="7.373473"/>
+</kw>
+<kw name="Quando digito o nome da música">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-02T10:52:48.416177" level="INFO">Typing text 'ana vilela trem bala' into text field '//input[@id="search"]'.</msg>
+<arg>${Input_Pesquisa}</arg>
+<arg>${Musica}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-02T10:52:48.414585" elapsed="0.284476"/>
+</kw>
+<status status="PASS" start="2024-08-02T10:52:48.414585" elapsed="0.284982"/>
+</kw>
+<kw name="E clico no botão Pesquisar">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-02T10:52:48.699567" level="INFO">Clicking element '//button[@id="search-icon-legacy"]'.</msg>
+<arg>${Button_Pesquisa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-02T10:52:48.699567" elapsed="0.140251"/>
+</kw>
+<status status="PASS" start="2024-08-02T10:52:48.699567" elapsed="0.140251"/>
+</kw>
+<kw name="E clico no primeiro clique encontrato">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Primeiro_Video}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-02T10:52:48.840514" elapsed="1.019361"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-02T10:52:49.859875" level="INFO">Clicking element '(//yt-formatted-string[@class="style-scope ytd-video-renderer"])[1]'.</msg>
+<arg>${Primeiro_Video}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-02T10:52:49.859875" elapsed="0.571893"/>
+</kw>
+<status status="PASS" start="2024-08-02T10:52:48.840514" elapsed="1.592337"/>
+</kw>
+<kw name="Então o vídeo é exibido">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-08-02T10:53:51.269571" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-08-02T10:53:51.269571" level="FAIL">Element '(//yt-touch-feedback-shape[@style="border-radius: inherit;"])[1]' not visible after 1 minute.</msg>
+<arg>${Video_Exibido}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-08-02T10:52:50.432851" elapsed="60.843477">Element '(//yt-touch-feedback-shape[@style="border-radius: inherit;"])[1]' not visible after 1 minute.</status>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${Video_Exibido}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-08-02T10:53:51.276328" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-08-02T10:53:51.276328" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-08-02T10:52:50.432851" elapsed="60.846492">Element '(//yt-touch-feedback-shape[@style="border-radius: inherit;"])[1]' not visible after 1 minute.</status>
+</kw>
+<tag>regressivo</tag>
+<status status="FAIL" start="2024-08-02T10:52:41.039624" elapsed="70.239798">Element '(//yt-touch-feedback-shape[@style="border-radius: inherit;"])[1]' not visible after 1 minute.</status>
+</test>
+<status status="FAIL" start="2024-08-02T10:52:40.773560" elapsed="70.505862"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">regressivo</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="BDD">BDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
